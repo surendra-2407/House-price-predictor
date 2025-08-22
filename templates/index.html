@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🏡 House Price Prediction</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <form action="/predict" method="POST">
+
+        <div style="text-align: center; margin-bottom: 20px;">
+            <div class="icon">🏡</div>
+            <h2 class="icon-h">House Price Prediction</h2>
+            <h4 style="color: rgb(19, 13, 132);">Smart Estimation for Your Dream Home</h4>
+        </div>
+
+        <label>Total Sqft:</label>
+        <input type="text" name="total_sqft" required>
+
+        <label>Bath:</label>
+        <input type="number" name="bath" required>
+
+        <label>Balcony:</label>
+        <input type="number" name="balcony" required>
+
+        <label>BHK:</label>
+        <select name="bhk">
+            <option value="1">1 BHK</option>
+            <option value="2">2 BHK</option>
+            <option value="3">3 BHK</option>
+            <option value="4">4 BHK</option>
+            <option value="5">5 BHK</option>
+            <option value="6">6 BHK</option>
+            <option value="7">7 BHK</option>
+            <option value="8">8 BHK</option>
+        </select>
+
+        <label>Location:</label>
+        <select name="location" required>
+            <option value="Whitefield">Whitefield</option>
+            <option value="Electronic City">Electronic City</option>
+            <option value="Marathahalli">Marathahalli</option>
+            <option value="Koramangala">Koramangala</option>
+            <option value="Indiranagar">Indiranagar</option>
+            <option value="HSR Layout">HSR Layout</option>
+            <option value="Sarjapur Road">Sarjapur Road</option>
+            <option value="JP Nagar">JP Nagar</option>
+            <option value="Jayanagar">Jayanagar</option>
+            <option value="Bannerghatta Road">Bannerghatta Road</option>
+            <option value="Hebbal">Hebbal</option>
+            <option value="Yelahanka">Yelahanka</option>
+            <option value="Malleshwaram">Malleshwaram</option>
+            <option value="BTM Layout">BTM Layout</option>
+            <option value="Rajajinagar">Rajajinagar</option>
+        </select>
+
+        <label>Area Type:</label>
+        <select name="area_type" required>
+            <option value="Super built-up Area">Super built-up Area</option>
+            <option value="Plot Area">Plot Area</option>
+            <option value="Built-up Area">Built-up Area</option>
+            <option value="Carpet Area">Carpet Area</option>
+        </select>
+
+        <label>Availability:</label>
+        <select name="availability" required>
+            <option value="Ready To Move">Ready To Move</option>
+            <option value="Immediate Possession">Immediate Possession</option>
+            <option value="19-Dec">19-Dec</option>
+            <option value="18-May">18-May</option>
+            <option value="21-Jun">21-Jun</option>
+            <option value="22-Jul">22-Jul</option>
+        </select>
+
+        <button type="submit">Predict Price</button>
+
+        {% if prediction_text %}
+            <h3 style="text-align:center; color:green; margin-top:20px;">
+                {{ prediction_text }}
+            </h3>
+        {% endif %}
+    </form>
+</body>
+</html>
