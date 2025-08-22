@@ -45,5 +45,4 @@ def predict():
             prediction_text=f"Error: {str(error_message)}"
         )
 
-if __name__ == "__main__":
-    app.run(debug=True)
+
